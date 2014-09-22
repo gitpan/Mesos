@@ -1,4 +1,3 @@
-bin/generate_messages
 Build.PL
 examples/test_executor.pl
 examples/test_framework.pl
