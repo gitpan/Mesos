@@ -1,0 +1,60 @@
+---
+abstract: lib/Mesos.pm
+author:
+  - 'Mark Flickinger <maf@cpan.org>'
+build_requires:
+  ExtUtils::Typemaps::ObjectMap: '0'
+  ExtUtils::Typemaps::STL: '0'
+  ExtUtils::XSpp: '0.18'
+  FindBin::libs: '0'
+  Test::Most: '0'
+configure_requires:
+  ExtUtils::CppGuess: '0.07'
+  File::Find: '0'
+  File::Temp: '0'
+  Module::Build: '0.42'
+  Module::Build::WithXSpp: '0.14'
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4207, CPAN::Meta::Converter version 2.133380'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Mesos
+provides:
+  Mesos:
+    file: lib/Mesos.pm
+    version: '1.00'
+  Mesos::Channel:
+    file: lib/Mesos/Channel.pm
+  Mesos::Executor:
+    file: lib/Mesos/Executor.pm
+  Mesos::ExecutorDriver:
+    file: lib/Mesos/ExecutorDriver.pm
+  Mesos::Role::Dispatcher:
+    file: lib/Mesos/Role/Dispatcher.pm
+  Mesos::Role::Executor:
+    file: lib/Mesos/Role/Executor.pm
+  Mesos::Role::Scheduler:
+    file: lib/Mesos/Role/Scheduler.pm
+  Mesos::Scheduler:
+    file: lib/Mesos/Scheduler.pm
+  Mesos::SchedulerDriver:
+    file: lib/Mesos/SchedulerDriver.pm
+recommends:
+  Test::LeakTrace: '0'
+requires:
+  AnyEvent: '0'
+  Class::Load: '0'
+  Exporter: '0'
+  ExtUtils::ParseXS: '3.18'
+  Google::ProtocolBuffers: '0'
+  Moo: '0'
+  Try::Tiny: '0'
+  Types::Standard: '0'
+resources:
+  bugtracker: https://github.com/mark-5/perl-mesos/issues
+  homepage: https://github.com/mark-5/perl-mesos
+  license: http://dev.perl.org/licenses/
+  repository: https://github.com/mark-5/perl-mesos.git
+version: '1.00'
