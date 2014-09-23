@@ -3,6 +3,7 @@ abstract: lib/Mesos.pm
 author:
   - 'Mark Flickinger <maf@cpan.org>'
 build_requires:
+  ExtUtils::CBuilder: '0'
   ExtUtils::Typemaps::ObjectMap: '0'
   ExtUtils::Typemaps::STL: '0'
   ExtUtils::XSpp: '0.18'
@@ -24,7 +25,7 @@ name: Mesos
 provides:
   Mesos:
     file: lib/Mesos.pm
-    version: '1.02'
+    version: '1.03'
   Mesos::Channel:
     file: lib/Mesos/Channel.pm
   Mesos::Executor:
@@ -57,4 +58,4 @@ resources:
   homepage: https://github.com/mark-5/perl-mesos
   license: http://dev.perl.org/licenses/
   repository: https://github.com/mark-5/perl-mesos.git
-version: '1.02'
+version: '1.03'

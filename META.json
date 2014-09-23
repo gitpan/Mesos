@@ -16,6 +16,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "ExtUtils::CBuilder" : "0",
             "ExtUtils::Typemaps::ObjectMap" : "0",
             "ExtUtils::Typemaps::STL" : "0",
             "ExtUtils::XSpp" : "0.18"
@@ -55,7 +56,7 @@
    "provides" : {
       "Mesos" : {
          "file" : "lib/Mesos.pm",
-         "version" : "1.02"
+         "version" : "1.03"
       },
       "Mesos::Channel" : {
          "file" : "lib/Mesos/Channel.pm"
@@ -95,5 +96,5 @@
          "url" : "https://github.com/mark-5/perl-mesos.git"
       }
    },
-   "version" : "1.02"
+   "version" : "1.03"
 }
