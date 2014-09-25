@@ -4,10 +4,12 @@ use Mesos::Messages;
 use Mesos::Channel;
 use Moo;
 use Types::Standard qw(Str);
+use Type::Params qw(validate);
+use Mesos::Types qw(:all);
 use strict;
 use warnings;
 
-=head1 Name
+=head1 NAME
 
 Mesos::ExecutorDriver - perl driver for Mesos executors
 
@@ -20,12 +22,13 @@ sub BUILD {
 
 has executor => (
     is       => 'ro',
+    isa      => Executor,
     required => 1,
 );
 
 has channel => (
     is       => 'ro',
-    isa      => sub {shift->isa('Mesos::Channel')},
+    isa      => Channel,
     builder  => 1,
     # this needs to be lazy so that BUILD runs xs_init first
     lazy     => 1,
@@ -72,8 +75,17 @@ sub join {
     return $self->status;
 }
 
+around sendStatusUpdate => sub {
+    my ($orig, $self, @args) = @_;
+    return $self->$orig(validate(\@args, TaskStatus));
+};
 
-=head1 Methods
+around sendFrameworkMessage => sub {
+    my ($orig, $self, @args) = @_;
+    return $self->$orig(validate(\@args, Str));
+};
+
+=head1 METHODS
 
 =over 4
 

@@ -3,7 +3,6 @@ abstract: lib/Mesos.pm
 author:
   - 'Mark Flickinger <maf@cpan.org>'
 build_requires:
-  ExtUtils::CBuilder: '0'
   ExtUtils::Typemaps::ObjectMap: '0'
   ExtUtils::Typemaps::STL: '0'
   ExtUtils::XSpp: '0.18'
@@ -25,7 +24,7 @@ name: Mesos
 provides:
   Mesos:
     file: lib/Mesos.pm
-    version: '1.03'
+    version: '1.04'
   Mesos::Channel:
     file: lib/Mesos/Channel.pm
   Mesos::Executor:
@@ -42,20 +41,21 @@ provides:
     file: lib/Mesos/Scheduler.pm
   Mesos::SchedulerDriver:
     file: lib/Mesos/SchedulerDriver.pm
+  Mesos::Types:
+    file: lib/Mesos/Types.pm
 recommends:
   Test::LeakTrace: '0'
 requires:
   AnyEvent: '0'
-  Class::Load: '0'
   Exporter: '0'
   ExtUtils::ParseXS: '3.18'
   Google::ProtocolBuffers: '0'
-  Moo: '0'
+  Moo: '1.006'
   Try::Tiny: '0'
-  Types::Standard: '0'
+  Type::Tiny: '0'
 resources:
   bugtracker: https://github.com/mark-5/perl-mesos/issues
   homepage: https://github.com/mark-5/perl-mesos
   license: http://dev.perl.org/licenses/
   repository: https://github.com/mark-5/perl-mesos.git
-version: '1.03'
+version: '1.04'

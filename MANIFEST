@@ -1,4 +1,5 @@
 Build.PL
+Changes
 examples/test_executor.pl
 examples/test_framework.pl
 include/ExecutorDriver.hpp
@@ -18,6 +19,7 @@ lib/Mesos/Role/Executor.pm
 lib/Mesos/Role/Scheduler.pm
 lib/Mesos/Scheduler.pm
 lib/Mesos/SchedulerDriver.pm
+lib/Mesos/Types.pm
 MANIFEST			This list of files
 README.pod
 resources/mesos.proto
@@ -37,7 +39,9 @@ t/lib/Mesos/Test/Role/Process.pm
 t/lib/Mesos/Test/Scheduler.pm
 t/lib/Mesos/Test/SchedulerDriver.pm
 t/lib/Mesos/Test/Utils.pm
+t/pod.t
 t/scheduler_driver.t
+t/types.t
 xsp/Channel.xsp
 xsp/ExecutorDriver.xsp
 xsp/SchedulerDriver.xsp

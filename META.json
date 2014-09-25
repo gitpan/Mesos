@@ -16,7 +16,6 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::CBuilder" : "0",
             "ExtUtils::Typemaps::ObjectMap" : "0",
             "ExtUtils::Typemaps::STL" : "0",
             "ExtUtils::XSpp" : "0.18"
@@ -37,13 +36,12 @@
          },
          "requires" : {
             "AnyEvent" : "0",
-            "Class::Load" : "0",
             "Exporter" : "0",
             "ExtUtils::ParseXS" : "3.18",
             "Google::ProtocolBuffers" : "0",
-            "Moo" : "0",
+            "Moo" : "1.006",
             "Try::Tiny" : "0",
-            "Types::Standard" : "0"
+            "Type::Tiny" : "0"
          }
       },
       "test" : {
@@ -56,7 +54,7 @@
    "provides" : {
       "Mesos" : {
          "file" : "lib/Mesos.pm",
-         "version" : "1.03"
+         "version" : "1.04"
       },
       "Mesos::Channel" : {
          "file" : "lib/Mesos/Channel.pm"
@@ -81,6 +79,9 @@
       },
       "Mesos::SchedulerDriver" : {
          "file" : "lib/Mesos/SchedulerDriver.pm"
+      },
+      "Mesos::Types" : {
+         "file" : "lib/Mesos/Types.pm"
       }
    },
    "release_status" : "stable",
@@ -96,5 +97,5 @@
          "url" : "https://github.com/mark-5/perl-mesos.git"
       }
    },
-   "version" : "1.03"
+   "version" : "1.04"
 }

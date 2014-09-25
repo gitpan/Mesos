@@ -16,11 +16,10 @@ my $build = Module::Build::WithXSpp->new(
     },
     requires        => {
         'AnyEvent'        => 0,
-        'Class::Load'     => 0,
         'Exporter'        => 0,
-        'Moo'             => 0,
+        'Moo'             => 1.006000,
         'Try::Tiny'       => 0,
-        'Types::Standard' => 0,
+        'Type::Tiny'      => 0,
         'ExtUtils::ParseXS'       => 3.18,
         'Google::ProtocolBuffers' => 0,
     },
