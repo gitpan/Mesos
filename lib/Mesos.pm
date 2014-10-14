@@ -20,7 +20,7 @@ The Mesos module ships with message classes generated from v0.20.0. Messages are
 
 =head2 Internal POSIX Threads
 
-The Apache Mesos library is multithreaded, which is problematic when dealing with perl. The solution Mesos currently goes with is to create C++ proxy classes, which registers callbacks that send notifications over a pipe, to perl. In the future this may change to sockets, or even to a pure perl implementation of mesos drivers(the latter would also eliminate the need for linking against the mesos shared library). Mesos then handles these notifications, and executes the corresponding perl code, inside of an AnyEvent loop.
+The Apache Mesos library is multithreaded, which is problematic when dealing with perl. The solution Mesos currently goes with is to create C++ proxy classes, which registers callbacks that send notifications event handlers. The two event handlers currently implemented are AnyEvent watchers(the default) and a Async::Interrupt object(the *::Interrupt drivers). Mesos then handles these notifications, and executes the corresponding perl code, inside of an AnyEvent loop.
 
 Launching internal POSIX threads also means that Mesos drivers are not fork safe, and only exec and POSIX::_exit can be guaranteed to work safely in the child process after forking. One should definitely not call any driver code in the child process after forking.
 
@@ -99,7 +99,7 @@ Mark Flickinger E<lt>maf@cpan.orgE<gt>
 use XSLoader;
 use Exporter 5.57 'import';
 
-our $VERSION = '1.04';
+our $VERSION = '1.05.0';
 our %EXPORT_TAGS = ( 'all' => [] );
 our @EXPORT_OK   = ( @{ $EXPORT_TAGS{'all'} } );
 

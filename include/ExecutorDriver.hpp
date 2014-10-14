@@ -17,10 +17,8 @@ public:
     Status status_;
     ProxyExecutor* proxyExecutor_;
 
-    ExecutorDriver();
+    ExecutorDriver(ProxyExecutor* proxyExecutor = (new ProxyExecutor));
     virtual ~ExecutorDriver();
-
-    MesosChannel* get_proxy_channel();
 
     virtual Status start();
     virtual Status stop();

@@ -3,10 +3,9 @@ use strict;
 use warnings;
 use FindBin::libs;
 use Test::More;
-use Mesos::Channel;
+use Mesos::Channel::Interrupt;
 
-my $channel = Mesos::Channel->new;
-like($channel->fd, qr/^\d+$/, 'channel fd returned int');
+my $channel = Mesos::Channel::Interrupt->new(callback => sub {});
 
 is($channel->recv, undef, 'returned undef on empty recv');
 

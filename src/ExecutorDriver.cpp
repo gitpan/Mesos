@@ -3,21 +3,17 @@
 namespace mesos {
 namespace perl {
 
-ExecutorDriver::ExecutorDriver()
+ExecutorDriver::ExecutorDriver(ProxyExecutor* proxyExecutor)
+: proxyExecutor_(proxyExecutor),
+  driver_(new MesosExecutorDriver(proxyExecutor_))
 {
-    proxyExecutor_ = new ProxyExecutor();
-    driver_ = new MesosExecutorDriver(proxyExecutor_);
+
 }
 
 ExecutorDriver::~ExecutorDriver()
 {
     delete driver_;
     delete proxyExecutor_;
-}
-
-MesosChannel* ExecutorDriver::get_proxy_channel()
-{
-    return proxyExecutor_->channel_;
 }
 
 Status ExecutorDriver::start()

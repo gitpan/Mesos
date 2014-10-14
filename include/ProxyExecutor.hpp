@@ -4,7 +4,7 @@
 #include <vector>
 #include <memory>
 #include <mesos/executor.hpp>
-#include <MesosChannel.hpp>
+#include <PipeChannel.hpp>
 
 using namespace mesos;
 
@@ -16,7 +16,7 @@ class ProxyExecutor : public Executor
 public:
     MesosChannel* channel_;
 
-    ProxyExecutor(): channel_(new MesosChannel) {};
+    ProxyExecutor(MesosChannel* channel = (new PipeChannel)): channel_(channel) {};
     virtual ~ProxyExecutor(){};
 
     virtual void registered(ExecutorDriver* driver,

@@ -36,10 +36,12 @@
          },
          "requires" : {
             "AnyEvent" : "0",
+            "Async::Interrupt" : "0",
             "Exporter" : "0",
             "ExtUtils::ParseXS" : "3.18",
             "Google::ProtocolBuffers" : "0",
             "Moo" : "1.006",
+            "Package::Stash" : "0",
             "Try::Tiny" : "0",
             "Type::Tiny" : "0"
          }
@@ -54,10 +56,16 @@
    "provides" : {
       "Mesos" : {
          "file" : "lib/Mesos.pm",
-         "version" : "1.04"
+         "version" : "v1.5.0"
       },
       "Mesos::Channel" : {
          "file" : "lib/Mesos/Channel.pm"
+      },
+      "Mesos::Channel::Interrupt" : {
+         "file" : "lib/Mesos/Channel/Interrupt.pm"
+      },
+      "Mesos::Channel::Pipe" : {
+         "file" : "lib/Mesos/Channel/Pipe.pm"
       },
       "Mesos::Executor" : {
          "file" : "lib/Mesos/Executor.pm"
@@ -65,14 +73,29 @@
       "Mesos::ExecutorDriver" : {
          "file" : "lib/Mesos/ExecutorDriver.pm"
       },
+      "Mesos::ExecutorDriver::Interrupt" : {
+         "file" : "lib/Mesos/ExecutorDriver/Interrupt.pm"
+      },
+      "Mesos::Role::Channel" : {
+         "file" : "lib/Mesos/Role/Channel.pm"
+      },
       "Mesos::Role::Dispatcher" : {
          "file" : "lib/Mesos/Role/Dispatcher.pm"
+      },
+      "Mesos::Role::Dispatcher::AnyEvent" : {
+         "file" : "lib/Mesos/Role/Dispatcher/AnyEvent.pm"
       },
       "Mesos::Role::Executor" : {
          "file" : "lib/Mesos/Role/Executor.pm"
       },
+      "Mesos::Role::ExecutorDriver" : {
+         "file" : "lib/Mesos/Role/ExecutorDriver.pm"
+      },
       "Mesos::Role::Scheduler" : {
          "file" : "lib/Mesos/Role/Scheduler.pm"
+      },
+      "Mesos::Role::SchedulerDriver" : {
+         "file" : "lib/Mesos/Role/SchedulerDriver.pm"
       },
       "Mesos::Scheduler" : {
          "file" : "lib/Mesos/Scheduler.pm"
@@ -80,8 +103,14 @@
       "Mesos::SchedulerDriver" : {
          "file" : "lib/Mesos/SchedulerDriver.pm"
       },
+      "Mesos::SchedulerDriver::Interrupt" : {
+         "file" : "lib/Mesos/SchedulerDriver/Interrupt.pm"
+      },
       "Mesos::Types" : {
          "file" : "lib/Mesos/Types.pm"
+      },
+      "Mesos::Utils" : {
+         "file" : "lib/Mesos/Utils.pm"
       }
    },
    "release_status" : "stable",
@@ -97,5 +126,5 @@
          "url" : "https://github.com/mark-5/perl-mesos.git"
       }
    },
-   "version" : "1.04"
+   "version" : "v1.5.0"
 }
