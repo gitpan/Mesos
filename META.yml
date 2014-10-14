@@ -24,7 +24,7 @@ name: Mesos
 provides:
   Mesos:
     file: lib/Mesos.pm
-    version: v1.5.0
+    version: v1.5.1
   Mesos::Channel:
     file: lib/Mesos/Channel.pm
   Mesos::Channel::Interrupt:
@@ -73,9 +73,10 @@ requires:
   Package::Stash: '0'
   Try::Tiny: '0'
   Type::Tiny: '0'
+  version: '0'
 resources:
   bugtracker: https://github.com/mark-5/perl-mesos/issues
   homepage: https://github.com/mark-5/perl-mesos
   license: http://dev.perl.org/licenses/
   repository: https://github.com/mark-5/perl-mesos.git
-version: v1.5.0
+version: v1.5.1
